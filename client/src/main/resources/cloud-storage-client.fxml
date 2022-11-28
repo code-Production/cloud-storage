@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.geekbrains.client.Controller">
+
+
+   <VBox fx:id="loginWindow" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="699.0" prefWidth="1021.0" visible="true">
+      <Label text="Cloud Storage client">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="50.0" top="150.0" />
+         </VBox.margin>
+      </Label>
+      <Label prefWidth="250.0" text="login:">
+         <VBox.margin>
+            <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="loginFieldLoginWindow" maxWidth="300.0" prefWidth="300.0">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </TextField>
+      <Label prefWidth="250.0" text="password:">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="5.0" />
+         </VBox.margin>
+      </Label>
+      <PasswordField fx:id="passwordFieldLoginWindow" maxWidth="300.0" onAction="#authorization" prefWidth="300.0">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </PasswordField>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="1022.0">
+            <Button mnemonicParsing="false" onAction="#authorization" prefHeight="26.0" prefWidth="60.0" text="Sign in">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="25.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#showRegisterWindow" prefHeight="26.0" prefWidth="60.0" text="Sign up">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         <VBox.margin>
+            <Insets left="108.0" />
+         </VBox.margin>
+      </HBox>
+      <Label alignment="BOTTOM_RIGHT" prefHeight="242.0" prefWidth="1021.0" text="v. 1.0">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets right="3.0" />
+         </padding>
+      </Label>
+   </VBox>
+
+   <VBox fx:id="registerWindow" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="699.0" prefWidth="1021.0" visible="false">
+      <Label text="Join us!:">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="30.0" top="150.0" />
+         </VBox.margin>
+      </Label>
+      <Label prefWidth="250.0" text="username:">
+         <VBox.margin>
+            <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="usernameFieldRegisterWindow" maxWidth="300.0" prefWidth="300.0">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </TextField>
+      <Label layoutX="396.0" layoutY="280.0" prefWidth="250.0" text="login:">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="5.0" left="10.0" right="10.0" />
+         </VBox.margin>
+      </Label>
+      <TextField fx:id="loginFieldRegisterWindow" layoutX="371.0" layoutY="312.0" maxWidth="300.0" prefWidth="300.0">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </TextField>
+      <Label prefWidth="250.0" text="password:">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="5.0" />
+         </VBox.margin>
+      </Label>
+      <PasswordField fx:id="passwordFieldRegisterWindow" maxWidth="300.0" onAction="#registration" prefWidth="300.0">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </PasswordField>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="1022.0">
+            <Button mnemonicParsing="false" onAction="#registration" prefHeight="26.0" prefWidth="60.0" text="Sign up">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="25.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#showLoginWindow" prefHeight="26.0" prefWidth="60.0" text="Return">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         <VBox.margin>
+            <Insets left="108.0" />
+         </VBox.margin>
+      </HBox>
+      <Label alignment="BOTTOM_RIGHT" prefHeight="194.0" prefWidth="1021.0" text="v. 1.0">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets right="3.0" />
+         </padding>
+      </Label>
+   </VBox>
+   
+
+    <VBox fx:id="mainWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="699.0" prefWidth="1021.0" visible="false">
+          <MenuBar>
+              <Menu mnemonicParsing="false" text="File">
+                  <MenuItem mnemonicParsing="false" text="Close" />
+              </Menu>
+              <Menu mnemonicParsing="false" text="Edit">
+                  <MenuItem mnemonicParsing="false" text="Delete" />
+              </Menu>
+              <Menu mnemonicParsing="false" text="Help">
+                  <MenuItem mnemonicParsing="false" text="About" />
+              </Menu>
+             <VBox.margin>
+                <Insets />
+             </VBox.margin>
+          </MenuBar>
+          <HBox VBox.vgrow="ALWAYS">
+                <VBox minWidth="505.0">
+                      <TextField fx:id="clientPathField" onAction="#setClientPath" promptText="HOME PATH">
+                         <VBox.margin>
+                            <Insets bottom="3.0" />
+                         </VBox.margin>
+                      </TextField>
+                      <ListView fx:id="clientFilesList" VBox.vgrow="ALWAYS">
+                         <VBox.margin>
+                            <Insets />
+                         </VBox.margin>
+                      </ListView>
+            <HBox.margin>
+               <Insets right="1.0" />
+            </HBox.margin>
+                </VBox>
+                <VBox minWidth="505.0">
+                      <TextField fx:id="serverPathField" onAction="#setServerPath" promptText="CLOUD PATH">
+                         <VBox.margin>
+                            <Insets bottom="3.0" />
+                         </VBox.margin>
+                      </TextField>
+                      <ListView fx:id="serverFilesList" VBox.vgrow="ALWAYS">
+                         <VBox.margin>
+                            <Insets />
+                         </VBox.margin>
+                      </ListView>
+            <HBox.margin>
+               <Insets left="2.0" />
+            </HBox.margin>
+                </VBox>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="3.0" left="3.0" right="4.0" top="3.0" />
+         </padding>
+          </HBox>
+      <TextArea fx:id="consoleLog" editable="false" minHeight="100.0" promptText="CONSOLE LOG">
+         <VBox.margin>
+            <Insets bottom="4.0" left="4.0" right="3.0" />
+         </VBox.margin>
+      </TextArea>
+    </VBox>
+
+</AnchorPane>
