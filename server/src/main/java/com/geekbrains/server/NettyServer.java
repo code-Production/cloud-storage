@@ -203,12 +203,26 @@ public class NettyServer {
             } catch (FileAlreadyExistsException e) {
                 NettyServer.closeChannel(
                         String.format(
-                                "Cannot create user directory because it already exists, exception='%s'", e.getMessage()),
+                                "Cannot create user directory '%s' because it already exists, exception='%s'",
+                                userPath,
+                                e.getMessage()
+                        ),
                         channel
                 );
             } catch (IOException e) {
                 if (!Files.exists(userPath.getParent())) {
-                    NettyServer.closeChannel("Parent directory for user's folders doesn't exist", channel);
+                    try {
+                        Files.createDirectories(userPath.getParent());
+                    } catch (IOException ex) {
+                        NettyServer.closeChannel(
+                                String.format(
+                                        "Creating parent directory for user's folders '%s' caused I/O error.",
+                                        userPath
+                                ),
+                                channel
+                        );
+                    }
+
                 } else {
                     NettyServer.closeChannel(
                             String.format("Unknown IO problem occurred, exception='%s'", e.getMessage()),

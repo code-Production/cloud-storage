@@ -22,6 +22,7 @@
         <netty.version>4.1.84.Final</netty.version>
     </properties>
 
+
     <dependencies>
 
         <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
@@ -43,7 +44,7 @@
             <version>${netty.version}</version>
         </dependency>
 
-
     </dependencies>
+
 
 </project>

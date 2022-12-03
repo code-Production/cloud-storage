@@ -20,8 +20,12 @@ import static com.geekbrains.client.AppStarter.clientBasePath;
 public class ListCellFactory implements Callback<ListView<String>, ListCell<String>> {
 
     private static final int ICON_SIZE = 16;
-    private static final String FOLDER_ICON = "client/src/main/resources/images/folder32-2.png";
-    private static final String FILE_ICON = "client/src/main/resources/images/file32-2.png";
+//    private static final String FOLDER_ICON = "client/src/main/resources/com/geekbrains/client/folder32-2.png";
+//    private static final String FILE_ICON = "client/src/main/resources/com/geekbrains/client/file32-2.png";
+    //doesn't work in intelliJ
+    //otherwise images doesn't render in jar after maven assembly
+    private static final String FOLDER_ICON = "/folder32-2.png";
+    private static final String FILE_ICON = "/file32-2.png";
 
 
     @Override
