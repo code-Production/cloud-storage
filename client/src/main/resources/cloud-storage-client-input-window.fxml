@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.geekbrains.client.InputWindowController">
+
+      <VBox alignment="CENTER" prefHeight="136.0" prefWidth="400.0">
+            <Label fx:id="inputWindowLabel" contentDisplay="TOP" prefHeight="15.0" prefWidth="400.0" text="EXAMPLE" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="7.25" left="55.0" top="14.5" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="inputWindowTextField" onAction="#confirmed">
+               <VBox.margin>
+                  <Insets bottom="7.25" left="40.0" right="40.0" top="7.25" />
+               </VBox.margin>
+            </TextField>
+            <HBox alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="400.0">
+                  <Button mnemonicParsing="false" onAction="#confirmed" prefHeight="25.0" prefWidth="75.0" text="OK">
+                     <HBox.margin>
+                        <Insets right="15.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#closeWindow" prefHeight="25.0" prefWidth="75.0" text="Cancel">
+                     <HBox.margin>
+                        <Insets right="40.0" />
+                     </HBox.margin>
+                  </Button>
+               <VBox.margin>
+                  <Insets bottom="14.5" top="7.25" />
+               </VBox.margin>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+            </HBox>
+      </VBox>
+</AnchorPane>
